@@ -66,10 +66,6 @@ toc
 
 %% Trajectory tracking
 disp('Generating Trajectory ...');
-% trajectory_generator([], [], path{path_id}, t_time, ts_par, x_par);
-% trajectory = test_trajectory(start{1}, stop{1}, {path{1},path{2}}, true, map, decomps, time_allocation); % with visualization
-% trajectory_generator([], [], path{4}, t_time1, ts_par1, x_par1);
-% trajectory = test_trajectory(start{2}, stop{2}, {path{3},path{4}}, true, map, {decomps{3},decomps{4}}, time_allocation);
 trajectory = test_trajectory(start, stop, path, true, map, decomps, time_allocation);
 disp('Blue line is Trajectory planning.');
 disp('Red line is Trajectory tracking.');
