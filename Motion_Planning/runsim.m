@@ -35,12 +35,11 @@ end
 %% Generating Convex Polytopes
 obps = PointCloudMap(map.blocks, map.margin);   % blocks of Metric Map change to point cloud
 
-decomps{2} = []
-decomps{4} = []
 disp('JPS -> SFC time is :');
 tic
 for qn = 1:nquad
     decomps{2*qn-1} = SFC_3D(path{2*qn}, obps, map.boundary);%  call SFC
+    decomps{2*qn} = {};
 end 
 toc
 
@@ -62,16 +61,16 @@ toc
 % makeGifAndJpg(1);     %figure(1): Graph without trajectory
 
 %% Trajectory planning
-[t_time, ts_par, x_par] = TrajectoryPlanning(path{path_id}, decomps{SFC_id}, time_allocation);
-[t_time1, ts_par1, x_par1] = TrajectoryPlanning(path{4}, decomps{3}, time_allocation);
+% [t_time, ts_par, x_par] = TrajectoryPlanning(path{path_id}, decomps{SFC_id}, time_allocation);
+% [t_time1, ts_par1, x_par1] = TrajectoryPlanning(path{4}, decomps{3}, time_allocation);
 
 %% Trajectory tracking
 disp('Generating Trajectory ...');
-trajectory_generator([], [], path{path_id}, t_time, ts_par, x_par);
-trajectory = test_trajectory(start{1}, stop{1}, {path{1},path{2}}, true, map, decomps); % with visualization
-trajectory_generator([], [], path{4}, t_time1, ts_par1, x_par1);
-trajectory = test_trajectory(start{2}, stop{2}, {path{3},path{4}}, true, map, decomps);
-% trajectory = test_trajectory(start, stop, path, true, map, decomps);
+% trajectory_generator([], [], path{path_id}, t_time, ts_par, x_par);
+% trajectory = test_trajectory(start{1}, stop{1}, {path{1},path{2}}, true, map, decomps, time_allocation); % with visualization
+% trajectory_generator([], [], path{4}, t_time1, ts_par1, x_par1);
+% trajectory = test_trajectory(start{2}, stop{2}, {path{3},path{4}}, true, map, {decomps{3},decomps{4}}, time_allocation);
+trajectory = test_trajectory(start, stop, path, true, map, decomps, time_allocation);
 disp('Blue line is Trajectory planning.');
 disp('Red line is Trajectory tracking.');
 
