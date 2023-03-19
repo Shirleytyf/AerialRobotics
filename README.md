@@ -2,7 +2,6 @@
 Simulate the path planning and trajectory planning of quadrotors/UAVs.
 
 
-
 ## Motion Planning project
 #### The main purpose:
 - A new method to improve path planning
