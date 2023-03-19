@@ -58,7 +58,7 @@ for j = 1 : size(paths, 2)
     if j == 1
         % JPS's result
 %         plot3(paths{j}(:,1), paths{j}(:,2), paths{j}(:,3),'-*','color','k','LineWidth',3);
-    elseif j == 2
+    elseif  mod(j,2) == 0
         % JPS() + simple path() result: 
 %         plot3(paths{j}(:,1), paths{j}(:,2), paths{j}(:,3),'-*','color','#A2142F','LineWidth',3);
         plot3(paths{j}(:,1), paths{j}(:,2), paths{j}(:,3),'-*','color','k','LineWidth',3);
@@ -71,6 +71,7 @@ set(gca,'DataAspectRatio',[0.1 0.1 0.1]);
 % drawEllipsoid = true;
 if (exist('drawEllipsoid') && (drawEllipsoid == true))
     decomps{1}.drawEllipsoids();
+%     decomps{3}.drawEllipsoids();
 %     decomps{2}.drawEllipsoids();
 end
 

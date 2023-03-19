@@ -24,8 +24,10 @@ switch choose_map
       acc   = 2; 
    case 2
       map.load_map('0Maps/3dCorner.txt', 0.1, 0.1, 0.1);
-      start = {[2.6  1.0 1.0]};
-      stop  = {[2.5  3.0 2.6]};
+      start = {[2.6  1.0 1.0],[2.0  0.8 1.0]};
+      stop  = {[2.5  3.0 2.6],[3.0  3.0 2.6]};
+%       start = {[2.6  1.0 1.0]};
+%       stop  = {[2.5  3.0 2.6]};
       acc   = 2;        % acceleration 
       if path_id == 4
           speed = 1.0767; % for path_id = 4, time = 4.3682, snap = 350.3038, fly use  4.1s

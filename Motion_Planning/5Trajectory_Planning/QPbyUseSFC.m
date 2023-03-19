@@ -133,7 +133,7 @@ function [minValue, px, py, pz] = minimum_snap_three_axis_SFC(traj, ts, decomp)
    
     
 %     % Modify the number of iterations
-    options = optimoptions('fmincon');
+%     options = optimoptions('fmincon');
     options.MaxIterations = 2000;   % Defaults = 1000
     lb = []; ub = []; x0 = []; 
     p = quadprog(Q_all,f,A,b,Aeq,beq, lb,ub,x0, options);

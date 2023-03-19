@@ -10,20 +10,25 @@ classdef GridMap < handle
     methods 
         function obj = GridMap()
         end
-        
+        % filename参数指定要加载地图数据的文件名。
+        % xy_res和z_res参数分别指定x/y和z维度网格的分辨率。
+        % margin参数指定应该标记为障碍物的每个障碍物外部距离。
         function load_map(obj, filename, xy_res, z_res, margin)
             fid = fopen(filename);
             tline = fgets(fid);
             obj.blocks = [];
             while ischar(tline)
                 % skip empty line and comments
-                if numel(tline) > 1 & tline(1)~='#'
+                if numel(tline) > 1 && tline(1)~='#'
                     % convert char array to string
                     if strncmpi(tline, 'boundary', 8)
-                        boundarys = strread(tline(9:end));
+                        contents = textscan(tline, 'boundary %f %f %f %f %f %f');
+                        boundarys = [contents{1} contents{2} contents{3} contents{4} contents{5} contents{6}];
                     end
                     if strncmpi(tline, 'block', 5)
-                        block = strread(tline(6:end));
+                        contents = textscan(tline, 'block %f %f %f %f %f %f %f %f %f');
+%                         block = strread(tline(6:end));
+                        block = [contents{1} contents{2} contents{3} contents{4} contents{5} contents{6} contents{7} contents{8} contents{9}];
                         assert(size(block,2) == 9);
                         obj.blocks = [obj.blocks; block];
                     end
