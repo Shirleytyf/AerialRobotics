@@ -28,8 +28,9 @@ for qn = 1:nquad
 end
 
 %% delete the points of no-use
-path{2} = simplify_path(map, path{1});
-path{4} = simplify_path(map, path{3});
+for qn = 1:nquad
+    path{2*qn} = simplify_path(map, path{2*qn-1});
+end
 
 %% Generating Convex Polytopes
 obps = PointCloudMap(map.blocks, map.margin);   % blocks of Metric Map change to point cloud
@@ -38,12 +39,10 @@ decomps{2} = []
 decomps{4} = []
 disp('JPS -> SFC time is :');
 tic
-decomps{1} = SFC_3D(path{2}, obps, map.boundary); %  call SFC
-decomps{3} = SFC_3D(path{4}, obps, map.boundary); 
+for qn = 1:nquad
+    decomps{2*qn-1} = SFC_3D(path{2*qn}, obps, map.boundary);%  call SFC
+end 
 toc
-
-path{path_id}
-
 
 %% draw path and blocks
 % if nquad == 1
