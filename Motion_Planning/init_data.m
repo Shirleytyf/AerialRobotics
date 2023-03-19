@@ -2,7 +2,7 @@ start = {[]};
 stop  = {[]};
 
 if (~exist('demoActivate')) || (demoActivate == false)
-    choose_map  = 3;
+    choose_map  = 4;
 end
 demoActivate    = false;
 if (~exist('path_id'))
@@ -38,6 +38,16 @@ switch choose_map
       map.load_map('0Maps/Z_3blocks.txt', 0.2, 0.2, 0.1);
       start = {[-1 1.5 2]};
       stop  = {[11 1.5 1]};
+      acc   = 2;
+      if path_id == 4
+          speed = 1.4;      %for path_id = 4, time = 12.9343, snap = 58.376, fly use  12.45s
+      else
+          speed = 1.10423;  %for path_id = 2, time = 12.9343, snap = 300.3111, fly use  13.9s  
+      end
+    case 4   %% Z_3blocks
+      map.load_map('0Maps/tree.txt', 0.2, 0.2, 0.1);
+      start = {[-1 1.5 2]};
+      stop  = {[3 1.5 1]};
       acc   = 2;
       if path_id == 4
           speed = 1.4;      %for path_id = 4, time = 12.9343, snap = 58.376, fly use  12.45s

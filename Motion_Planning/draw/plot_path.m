@@ -68,7 +68,7 @@ hold off
 
 set(gca,'DataAspectRatio',[0.1 0.1 0.1]);
 
-% drawEllipsoid = true;
+drawEllipsoid = true;
 if (exist('drawEllipsoid') && (drawEllipsoid == true))
     decomps{1}.drawEllipsoids();
 %     decomps{3}.drawEllipsoids();
