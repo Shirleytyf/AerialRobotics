@@ -43,26 +43,6 @@ for qn = 1:nquad
 end 
 toc
 
-%% draw path and blocks
-% if nquad == 1
-%     plot_path(path, map, decomps); 
-% else
-% %     decomps{1,2}
-% %     decomps{3:4}
-%     % you could modify your plot_path to handle cell input for multiple robots
-% %     for qn = 1:nquad
-% %         plot_path({path{1:2}}, map, {decomps{1},decomps{1}}); 
-% %         plot_path({path{3:4}}, map, {decomps{3},decomps{4}});   
-% %     end
-%     plot_path(path, map, decomps)
-% end
-
-% draw_ObcPoints
-% makeGifAndJpg(1);     %figure(1): Graph without trajectory
-
-%% Trajectory planning
-% [t_time, ts_par, x_par] = TrajectoryPlanning(path{path_id}, decomps{SFC_id}, time_allocation);
-% [t_time1, ts_par1, x_par1] = TrajectoryPlanning(path{4}, decomps{3}, time_allocation);
 
 %% Trajectory tracking
 disp('Generating Trajectory ...');

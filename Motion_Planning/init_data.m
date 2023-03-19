@@ -2,7 +2,7 @@ start = {[]};
 stop  = {[]};
 
 if (~exist('demoActivate')) || (demoActivate == false)
-    choose_map  = 2;
+    choose_map  = 3;
 end
 demoActivate    = false;
 if (~exist('path_id'))
@@ -24,8 +24,8 @@ switch choose_map
       acc   = 2; 
    case 2
       map.load_map('0Maps/3dCorner.txt', 0.1, 0.1, 0.1);
-      start = {[2.6  1.0 1.0],[1.0  0.8 3.0],[2.0  3.0 0.5]};
-      stop  = {[2.5  3.0 2.6],[3.0  3.0 0.5],[3.0  1.0 3.0]};
+      start = {[3.1  1.0 1.0],[1.0  0.8 3.0],[3.0  3.0 0.5]};
+      stop  = {[2.8  3.0 2.6],[3.0  3.0 0.5],[2.0  1.0 3.0]};
 %       start = {[2.6  1.0 1.0]};
 %       stop  = {[2.5  3.0 2.6]};
       acc   = 2;        % acceleration 
