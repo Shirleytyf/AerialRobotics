@@ -24,8 +24,9 @@ function path = simplify_path(map, path)
         
         pts = map.generateiIntermediaPoints(start_pos, end_pos);
         
-        % Collision detection
+        %% Collision detection
         c = map.collide(pts);
         c = any(c);
     end
+
 end

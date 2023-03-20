@@ -35,7 +35,7 @@ end
 %% Generating Convex Polytopes
 obps = PointCloudMap(map.blocks, map.margin);   % blocks of Metric Map change to point cloud
 
-disp('JPS -> SFC time is :');block 7.5 1.1 0     7.9 3 3.4         0.00 191.00 255.00
+disp('JPS -> SFC time is :');
 
 tic
 for qn = 1:nquad
