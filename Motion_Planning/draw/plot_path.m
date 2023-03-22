@@ -103,6 +103,19 @@ function drawBlock(block)
     vert = [x, y, z];
     fac = [1 2 6 5;2 3 7 6;3 4 8 7;4 1 5 8;1 2 3 4;5 6 7 8];
     c = block(7:9)/255;
+    %vert储存顶点信息
     patch('Vertices',vert,'Faces',fac,...
           'FaceVertexCData',hsv(6),'FaceColor',c,'FaceAlpha',.2);
+
+
+%     x = [ones(4,1) * block(1); ones(4,1) * block(4)]+5;
+%     y = [block(2);block(5);block(2);block(5);block(2);block(5);block(2);block(5)];
+%     z = [ones(2,1) * block(3); ones(2,1) * block(6); ones(2,1) * block(3); ones(2,1) * block(6)];
+% 
+%     vert = [x, y, z];
+%     fac = [1 2 6 5;2 4 8 6;3 4 8 7;1 3 7 5;1 2 4 3;5 6 8 7];
+%     c = block(7:9)/255;
+%     %vert储存顶点信息
+%     patch('Vertices',vert,'Faces',fac,...
+%           'FaceVertexCData',hsv(6),'FaceColor',c,'FaceAlpha',.2);
 end

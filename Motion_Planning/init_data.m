@@ -47,7 +47,7 @@ switch choose_map
     case 4   %% Z_3blocks
       map.load_map('0Maps/tree.txt', 0.2, 0.2, 0.1);
       start = {[-1 1.5 2]};
-      stop  = {[3 1.5 1]};
+      stop  = {[5.0 1.5 2.5]};
       acc   = 2;
       if path_id == 4
           speed = 1.4;      %for path_id = 4, time = 12.9343, snap = 58.376, fly use  12.45s
